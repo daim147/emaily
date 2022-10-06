@@ -1,17 +1,16 @@
-const express = require('express');
+const mongoose = require('mongoose');
 
-const app = express();
+const app = require('./app');
+const keys = require('./config/keys');
+require('./models');
+require('./service/passport');
+require('./routes');
 
-app.get('/', (req, res) => {
-	let count = 0;
-	for (let i = 0; i < 1e9; i++) {
-		count++;
-	}
-	res.send({ count });
+mongoose.connect(keys.mongoURI, () => {
+	console.log('Database connection successful');
 });
 
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 1000;
 app.listen(PORT, () => {
 	console.log('Server listening on ' + PORT);
 });
