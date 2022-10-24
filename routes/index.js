@@ -1,1 +1,2 @@
 require('./authRoutes');
+require('./billingRoutes');
