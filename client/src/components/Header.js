@@ -1,7 +1,6 @@
 import React, { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Payments from './Payments';
 
 const Header = () => {
 	const auth = useSelector((state) => state.auth);
@@ -20,7 +19,6 @@ const Header = () => {
 				return (
 					<>
 						<li>
-							{/* <Link to='/payments'>Add Credits</Link> */}
 							<a href='/api/stripe'>Add Credits</a>
 						</li>
 						<li>
@@ -37,7 +35,7 @@ const Header = () => {
 	return (
 		<nav>
 			<div className='nav-wrapper'>
-				<Link to={auth ? '/surveys' : '/'} className='left brand-logo'>
+				<Link to='/' className='left brand-logo'>
 					Emaily
 				</Link>
 				<ul id='nav-mobile' className='right hide-on-med-and-down'>

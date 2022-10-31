@@ -12,7 +12,7 @@ import {
 	Route,
 } from 'react-router-dom';
 import Landing from './components/Landing';
-import Payments from './components/Payments';
+import Surveys from './components/Surveys';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore();
@@ -20,7 +20,7 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<App />}>
 			<Route index element={<Landing />} />
-			<Route path='payments' element={<Payments />} />
+			<Route path='surveys' element={<Surveys />} />
 		</Route>
 	)
 );
