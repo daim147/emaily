@@ -7,5 +7,5 @@ module.exports = {
 	stripeSecretKey: process.env.STRIPE_SECRET_KEY,
 	stripeEndPointSecret: process.env.STRIPE_END_POINT_SECRET,
 	sendGridKey: process.env.SEND_GRID_KEY,
-	// redirectDomain: process.env.REDIRECT_DOMAIN
+	redirectDomain: process.env.REDIRECT_DOMAIN,
 };

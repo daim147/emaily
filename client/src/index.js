@@ -13,6 +13,7 @@ import {
 } from 'react-router-dom';
 import Landing from './components/Landing';
 import Surveys from './components/Surveys';
+import SurveysNew from './components/surveys/SurveyNew';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const store = configureStore();
@@ -20,7 +21,8 @@ const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<App />}>
 			<Route index element={<Landing />} />
-			<Route path='surveys' element={<Surveys />} />
+			<Route path='surveys' element={<Surveys />}></Route>
+			<Route path='surveys/new' element={<SurveysNew />} />
 		</Route>
 	)
 );

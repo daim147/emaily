@@ -13,7 +13,7 @@ function App() {
 		if (auth) {
 			navigate('/surveys');
 		}
-	}, [auth, navigate]);
+	}, [auth]);
 
 	useEffect(() => {
 		dispatch(fetchUser());
