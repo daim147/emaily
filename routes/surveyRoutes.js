@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const _ = require('lodash');
 const app = require('../app');
+const { Path } = require('path-parser');
+const { URL } = require('url');
 const requireCredits = require('../middlewares/requireCredits');
 const requireLogin = require('../middlewares/requireLogin');
 const surveyTemplate = require('../service/emailTemplates/surveyTemplate');
@@ -21,7 +23,6 @@ app.get('/api/surveys/:surveyId/:choice', (req, res) => {
 
 app.post('/api/surveys/webhooks', (req, res) => {
 	const p = new Path('/api/surveys/:surveyId/:choice');
-
 	_.chain(req.body)
 		.map(({ email, url }) => {
 			const match = p.test(new URL(url).pathname);
